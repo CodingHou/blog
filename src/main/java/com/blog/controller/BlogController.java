@@ -4,12 +4,11 @@ package com.blog.controller;
 import com.blog.entity.Blog;
 import com.blog.service.impl.BlogServiceImpl;
 import com.blog.utils.Result;
+import com.blog.vo.BlogVO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <p>
@@ -27,10 +26,11 @@ public class BlogController extends BaseController {
     @Autowired
     private BlogServiceImpl blogService;
 
+    @ResponseBody
     @RequestMapping(value = "/save",method ={ RequestMethod.POST,RequestMethod.GET})
-    public Result saveBlog(@Param("content")Byte[] content) {
+    public Result saveBlog(@RequestBody BlogVO vo) {
         Blog blog = new Blog();
-        blog.setMarkdownValue(content);
+        blog.setMarkdownValue(vo.getContent());
         Result res =  blogService.saveBlog(blog);
         return res;
 

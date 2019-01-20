@@ -26,9 +26,9 @@ public class Blog implements Serializable {
 
     private Integer theme;
 
-    private Byte[] markdownValue;
+    private String markdownValue;
 
-    private Byte[] htmlValue;
+    private String htmlValue;
 
     private Integer state;
 
@@ -54,19 +54,20 @@ public class Blog implements Serializable {
         this.theme = theme;
     }
 
-    public Byte[] getMarkdownValue() {
+
+    public String getMarkdownValue() {
         return markdownValue;
     }
 
-    public void setMarkdownValue(Byte[] markdownValue) {
+    public void setMarkdownValue(String markdownValue) {
         this.markdownValue = markdownValue;
     }
 
-    public Byte[] getHtmlValue() {
+    public String getHtmlValue() {
         return htmlValue;
     }
 
-    public void setHtmlValue(Byte[] htmlValue) {
+    public void setHtmlValue(String htmlValue) {
         this.htmlValue = htmlValue;
     }
 
