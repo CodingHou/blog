@@ -1,11 +1,11 @@
 package com.blog.controller;
 
 
+import com.alibaba.fastjson.JSON;
 import com.blog.entity.Blog;
 import com.blog.service.impl.BlogServiceImpl;
 import com.blog.utils.Result;
 import com.blog.vo.BlogVO;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
@@ -28,12 +28,17 @@ public class BlogController extends BaseController {
 
     @ResponseBody
     @RequestMapping(value = "/save",method ={ RequestMethod.POST,RequestMethod.GET})
-    public Result saveBlog(@RequestBody BlogVO vo) {
-        Blog blog = new Blog();
-        blog.setMarkdownValue(vo.getContent());
+    public Result saveBlog(@RequestBody Blog blog) {
+//        blog.setMarkdownValue(vo.getContent());
+        System.out.println(JSON.toJSONString(blog));
         Result res =  blogService.saveBlog(blog);
         return res;
 
+    }
+
+
+    public Result updateBlog(BlogVO vo){
+        return  null;
     }
 
 }

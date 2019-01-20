@@ -8,7 +8,6 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.blog.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * <p>
@@ -30,6 +29,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements IB
         System.out.println(JSON.toJSONString(blog));
         Result res = new Result();
         res.success("0000","保存成功");
+        res.setData(String.valueOf(blog.getId()));
         return  res;
     }
 }

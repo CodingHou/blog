@@ -67,7 +67,7 @@ public class MyGenerator {
         // 包配置
         PackageConfig pc = new PackageConfig();
 //        pc.setModuleName(scanner("模块名"));
-        pc.setParent("com.codinghou.blog");
+        pc.setParent("com.blog");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -114,7 +114,7 @@ public class MyGenerator {
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
 //        strategy.setSuperEntityClass("BaseController");
-        strategy.setEntityLombokModel(true);
+        strategy.setEntityLombokModel(false);
         strategy.setRestControllerStyle(true);
         strategy.setSuperControllerClass("BaseController");
         strategy.setInclude(scanner("表名"));

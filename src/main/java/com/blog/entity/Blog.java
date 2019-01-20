@@ -3,9 +3,6 @@ package com.blog.entity;
 import java.time.LocalDateTime;
 import java.sql.Blob;
 import java.io.Serializable;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
 
 /**
  * <p>
@@ -13,14 +10,21 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author codinghou
- * @since 2019-01-14
+ * @since 2019-01-21
  */
-@Data
-@EqualsAndHashCode(callSuper = false)
-@Accessors(chain = true)
 public class Blog implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     private String name;
 
@@ -36,8 +40,6 @@ public class Blog implements Serializable {
 
     private LocalDateTime updateTime;
 
-
-
     public String getName() {
         return name;
     }
@@ -45,7 +47,6 @@ public class Blog implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
     public Integer getTheme() {
         return theme;
     }
@@ -53,8 +54,6 @@ public class Blog implements Serializable {
     public void setTheme(Integer theme) {
         this.theme = theme;
     }
-
-
     public String getMarkdownValue() {
         return markdownValue;
     }
@@ -62,7 +61,6 @@ public class Blog implements Serializable {
     public void setMarkdownValue(String markdownValue) {
         this.markdownValue = markdownValue;
     }
-
     public String getHtmlValue() {
         return htmlValue;
     }
@@ -70,7 +68,6 @@ public class Blog implements Serializable {
     public void setHtmlValue(String htmlValue) {
         this.htmlValue = htmlValue;
     }
-
     public Integer getState() {
         return state;
     }
@@ -78,7 +75,6 @@ public class Blog implements Serializable {
     public void setState(Integer state) {
         this.state = state;
     }
-
     public LocalDateTime getCreateTime() {
         return createTime;
     }
@@ -86,12 +82,24 @@ public class Blog implements Serializable {
     public void setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
     }
-
     public LocalDateTime getUpdateTime() {
         return updateTime;
     }
 
     public void setUpdateTime(LocalDateTime updateTime) {
         this.updateTime = updateTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Blog{" +
+        "name=" + name +
+        ", theme=" + theme +
+        ", markdownValue=" + markdownValue +
+        ", htmlValue=" + htmlValue +
+        ", state=" + state +
+        ", createTime=" + createTime +
+        ", updateTime=" + updateTime +
+        "}";
     }
 }
