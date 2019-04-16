@@ -29,7 +29,7 @@
         </property>
     </bean>
 
-    <bean id="mybatisConfig" class="com.baomidou.mybatisplus.MybatisConfiguration">
+    <bean id="mybatisConfig" class="com.baomidou.mybatisplus.@MapperScan">
         <property name="mapUnderscoreToCamelCase" value="true"/>
         <!-- 部分数据库不识别默认的NULL类型（比如oracle，需要配置该属性 -->
         <!--<property name="jdbcTypeForNull">-->

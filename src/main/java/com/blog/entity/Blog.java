@@ -1,30 +1,25 @@
 package com.blog.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.sql.Blob;
 import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author codinghou
- * @since 2019-01-21
+ * @since 2019-01-22
  */
 public class Blog implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private int id;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
 
     private String name;
 
@@ -40,6 +35,13 @@ public class Blog implements Serializable {
 
     private LocalDateTime updateTime;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }
@@ -93,13 +95,14 @@ public class Blog implements Serializable {
     @Override
     public String toString() {
         return "Blog{" +
-        "name=" + name +
-        ", theme=" + theme +
-        ", markdownValue=" + markdownValue +
-        ", htmlValue=" + htmlValue +
-        ", state=" + state +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        "}";
+                "id=" + id +
+                ", name=" + name +
+                ", theme=" + theme +
+                ", markdownValue=" + markdownValue +
+                ", htmlValue=" + htmlValue +
+                ", state=" + state +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                "}";
     }
 }

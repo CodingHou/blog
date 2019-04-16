@@ -8,13 +8,5 @@ package com.blog.vo;
  * Project: blog
  */
 public class BlogVO {
-    private String content;
 
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
 }
